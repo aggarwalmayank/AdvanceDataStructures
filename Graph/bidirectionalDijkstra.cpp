@@ -5,7 +5,7 @@ using namespace std;
 int result = INT_MAX;
 
 //function of bidirectional dijkstra
-void biDijkstra(int s, int t,vector< vector<pair<int,int>> > graph,vector< vector<pair<int,int>> > reversegraph)
+void biDijkstra(int s, int t,vector< vector<pair<int,int>> > graph,vector< vector<pair<int,int>> > reversegraph,int V)
 {
 	vector<int> df(V,INF);//arracy to store forward dist
 	vector<int> db(V,INF);// array to store backward distance
@@ -103,7 +103,7 @@ int main()
 	cin>>src>>dest;
 	
 	//calling bidirectional dijkstra function
-	biDijkstra(src,dest,graph,reversegraph);
+	biDijkstra(src,dest,graph,reversegraph,V);
 	
 	if(result==INF)
 		cout <<"No Path Exist\n";
